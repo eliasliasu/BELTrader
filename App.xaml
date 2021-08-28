@@ -1,9 +1,32 @@
-﻿<Application x:Class="BELTrader.App"
+﻿<Application x:Class="BELTrader.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:BELTrader"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModels="clr-namespace:BELTrader.WPF.ViewModels"
+             xmlns:views="clr-namespace:BELTrader.WPF.Views"
+             xmlns:local="clr-namespace:BELTrader.WPF">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Common.xaml"/>
+                <ResourceDictionary Source="/Styles/NavigationBarResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModels:HomeVM}">
+                <views:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:PortfolioVM}">
+                <views:PortfolioView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:BuyVM}">
+                <views:BuyView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:LoginVM}">
+                <views:LoginView LoginCommand="{Binding LoginCommand}"/>
+            </DataTemplate>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

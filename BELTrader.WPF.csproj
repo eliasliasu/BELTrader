@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\login_background.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BELTrader.EntityFramework\BELTrader.EntityFramework.csproj" />
+    <ProjectReference Include="..\BELTrader\BELTrader.Domain\BELTrader.Domain.csproj" />
+    <ProjectReference Include="..\BELTrader\BELTrader.FinancialModelingPrepAPI\BELTrader.FinancialModelingPrepAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\login_background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
